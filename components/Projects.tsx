@@ -65,7 +65,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
       {/* --- LIST VIEW --- */}
       <div className={`transition-all duration-500 ${selectedProject ? 'opacity-0 pointer-events-none scale-95' : 'opacity-100 scale-100'}`}>
         {/* HEADER */}
-        <div className="mb-16 border-l-4 border-red-600 pl-6">
+        <div className="mb-16 border-l-4 border-fuchsia-600 pl-6">
             <h2 className="text-4xl font-display font-bold text-white mb-2 tracking-tight">Projects</h2>
             <p className="text-white/50 text-sm font-bold tracking-widest uppercase">Mission Archive</p>
         </div>
@@ -76,7 +76,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
             {/* LEFT ARROW - Desktop Only */}
             <button 
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute -left-6 lg:-left-16 top-[calc(50%-16px)] -translate-y-1/2 z-20 w-12 h-24 bg-slate-950/80 border-l-2 border-y border-white/10 hover:border-red-600 hover:bg-red-600/10 backdrop-blur-md items-center justify-center text-white/40 hover:text-white transition-all duration-300 group/arrow clip-path-polygon"
+            className="hidden md:flex absolute -left-6 lg:-left-16 top-[calc(50%-16px)] -translate-y-1/2 z-20 w-12 h-24 bg-slate-950/80 border-l-2 border-y border-white/10 hover:border-fuchsia-600 hover:bg-fuchsia-600/10 backdrop-blur-md items-center justify-center text-white/40 hover:text-white transition-all duration-300 group/arrow clip-path-polygon"
             aria-label="Previous project"
             >
               <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent opacity-0 group-hover/arrow:opacity-100 transition-opacity"></div>
@@ -97,13 +97,13 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                 >
                     {/* --- FOCUS FRAME CORNERS --- */}
                     {/* Top Left */}
-                    <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-red-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:top-2 group-hover:left-2 group-hover:shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                    <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-fuchsia-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:top-2 group-hover:left-2 group-hover:shadow-[0_0_10px_rgba(192,38,211,0.5)]"></div>
                     {/* Top Right */}
-                    <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-red-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:top-2 group-hover:right-2 group-hover:shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                    <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-fuchsia-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:top-2 group-hover:right-2 group-hover:shadow-[0_0_10px_rgba(192,38,211,0.5)]"></div>
                     {/* Bottom Left */}
-                    <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-red-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:bottom-2 group-hover:left-2 group-hover:shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                    <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-fuchsia-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:bottom-2 group-hover:left-2 group-hover:shadow-[0_0_10px_rgba(192,38,211,0.5)]"></div>
                     {/* Bottom Right */}
-                    <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-red-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:bottom-2 group-hover:right-2 group-hover:shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                    <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-fuchsia-600 opacity-30 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:bottom-2 group-hover:right-2 group-hover:shadow-[0_0_10px_rgba(192,38,211,0.5)]"></div>
 
                     {/* --- CONTENT CONTAINER --- */}
                     <div className="h-full w-full p-6 flex flex-col transition-transform duration-300 group-hover:-translate-y-1">
@@ -119,7 +119,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
 
                         {/* INFO */}
                         <div className="flex flex-col flex-grow items-start text-left">
-                            <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight group-hover:text-red-500 transition-colors">
+                            <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight group-hover:text-fuchsia-500 transition-colors">
                                 {project.title}
                             </h3>
                             
@@ -134,7 +134,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
 
                                 <div className="flex items-center gap-6 pt-4 w-full">
                                     {project.demoUrl ? (
-                                        <span className="text-sm font-bold text-red-500 flex items-center gap-2 group/link">
+                                        <span className="text-sm font-bold text-fuchsia-500 flex items-center gap-2 group/link">
                                             View Project
                                             <span className="transition-transform group-hover/link:translate-x-1">→</span>
                                         </span>
@@ -161,7 +161,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
             {/* RIGHT ARROW - Desktop Only */}
             <button 
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute -right-6 lg:-right-16 top-[calc(50%-16px)] -translate-y-1/2 z-20 w-12 h-24 bg-slate-950/80 border-r-2 border-y border-white/10 hover:border-red-600 hover:bg-red-600/10 backdrop-blur-md items-center justify-center text-white/40 hover:text-white transition-all duration-300 group/arrow"
+            className="hidden md:flex absolute -right-6 lg:-right-16 top-[calc(50%-16px)] -translate-y-1/2 z-20 w-12 h-24 bg-slate-950/80 border-r-2 border-y border-white/10 hover:border-fuchsia-600 hover:bg-fuchsia-600/10 backdrop-blur-md items-center justify-center text-white/40 hover:text-white transition-all duration-300 group/arrow"
             aria-label="Next project"
             >
               <div className="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent opacity-0 group-hover/arrow:opacity-100 transition-opacity"></div>
@@ -177,9 +177,9 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
            {/* FIXED CLOSE BUTTON - TOP RIGHT */}
            <button 
              onClick={closeProject}
-             className="fixed top-8 right-8 z-[70] flex items-center gap-3 bg-slate-900/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 hover:border-red-600 hover:bg-red-600/10 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(239,68,68,0.4)]"
+             className="fixed top-8 right-8 z-[70] flex items-center gap-3 bg-slate-900/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 hover:border-fuchsia-600 hover:bg-fuchsia-600/10 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(192,38,211,0.4)]"
            >
-             <span className="text-white font-bold tracking-widest text-sm group-hover:text-red-500 transition-colors">CLOSE</span>
+             <span className="text-white font-bold tracking-widest text-sm group-hover:text-fuchsia-500 transition-colors">CLOSE</span>
              <span className="text-white/50 group-hover:text-white transition-colors text-lg">✕</span>
            </button>
 
@@ -190,7 +190,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
               <div className="mb-12 animate-in slide-in-from-bottom-4 duration-700">
                   <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-4">{selectedProject.title}</h1>
                   <div className="flex items-center gap-4 text-lg md:text-xl font-bold">
-                      <span className="text-red-600 tracking-wider uppercase">{selectedProject.category}</span>
+                      <span className="text-fuchsia-600 tracking-wider uppercase">{selectedProject.category}</span>
                       <span className="w-2 h-2 bg-white/20 rounded-full"></span>
                       <span className="text-slate-300">{selectedProject.role}</span>
                   </div>
@@ -227,10 +227,10 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                                 className="w-full flex items-center justify-start gap-5 p-8 hover:bg-white/5 transition-colors group text-left"
                               >
                                   {/* ARROW ICON FIRST */}
-                                  <div className={`w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-red-600 group-hover:text-red-500 ${isTechOpen ? 'bg-white/10 text-white rotate-90' : 'text-white/50'}`}>
+                                  <div className={`w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-fuchsia-600 group-hover:text-fuchsia-500 ${isTechOpen ? 'bg-white/10 text-white rotate-90' : 'text-white/50'}`}>
                                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
                                   </div>
-                                  <span className="font-bold text-white text-lg group-hover:text-red-500 transition-colors">How it works</span>
+                                  <span className="font-bold text-white text-lg group-hover:text-fuchsia-500 transition-colors">How it works</span>
                               </button>
                               
                               <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isTechOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -248,10 +248,10 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                       
                       {/* TECH STACK */}
                       <div>
-                          <h4 className="text-sm font-bold text-red-600 uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Tech Stack</h4>
+                          <h4 className="text-sm font-bold text-fuchsia-600 uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Tech Stack</h4>
                           <div className="flex flex-wrap gap-3">
                               {selectedProject.tags.map(tag => (
-                                  <span key={tag} className="px-4 py-2 bg-slate-900 border border-white/10 rounded-lg text-sm font-bold text-slate-200 hover:border-red-600 hover:text-white transition-colors hover:shadow-[0_0_10px_rgba(239,68,68,0.3)]">
+                                  <span key={tag} className="px-4 py-2 bg-slate-900 border border-white/10 rounded-lg text-sm font-bold text-slate-200 hover:border-fuchsia-600 hover:text-white transition-colors hover:shadow-[0_0_10px_rgba(192,38,211,0.3)]">
                                       {tag}
                                   </span>
                               ))}
@@ -261,11 +261,11 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                       {/* FEATURES LIST */}
                       {selectedProject.features && (
                          <div>
-                            <h4 className="text-sm font-bold text-red-600 uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Key Features</h4>
+                            <h4 className="text-sm font-bold text-fuchsia-600 uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Key Features</h4>
                             <ul className="space-y-4">
                                 {selectedProject.features.map((feature, i) => (
                                     <li key={i} className="flex items-start gap-4 text-base font-medium text-slate-300 group hover:text-white transition-colors">
-                                        <span className="text-red-600 mt-1.5 text-xs">●</span>
+                                        <span className="text-fuchsia-600 mt-1.5 text-xs">●</span>
                                         {feature}
                                     </li>
                                 ))}
@@ -276,7 +276,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                       {/* ACTIONS */}
                       <div className="flex flex-col gap-5 pt-4">
                           {selectedProject.demoUrl ? (
-                            <a href={selectedProject.demoUrl} className="w-full py-5 bg-white text-black font-black text-center rounded-lg hover:bg-red-600 hover:text-white transition-all uppercase tracking-widest text-sm shadow-lg hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] transform hover:-translate-y-1">
+                            <a href={selectedProject.demoUrl} className="w-full py-5 bg-white text-black font-black text-center rounded-lg hover:bg-fuchsia-600 hover:text-white transition-all uppercase tracking-widest text-sm shadow-lg hover:shadow-[0_0_20px_rgba(192,38,211,0.6)] transform hover:-translate-y-1">
                                 Live Demo
                             </a>
                           ) : (

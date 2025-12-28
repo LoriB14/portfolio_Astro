@@ -316,7 +316,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
              id: Math.random(),
              pos: { x: ship.pos.x + offset.x, y: ship.pos.y + offset.y },
              vel: { x: -Math.cos(ship.angle) * 3 + (Math.random()-0.5), y: -Math.sin(ship.angle) * 3 + (Math.random()-0.5) },
-             life: 0.5, maxLife: 0.5, color: '#0ea5e9', size: 2
+             life: 0.5, maxLife: 0.5, color: '#9333ea', size: 2 // Purple particles
            });
         }
       }
@@ -395,7 +395,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
         if (dist < a.radius) {
           b.life = 0; 
           playSound('hit');
-          spawnParticles(a.pos.x, a.pos.y, 8, '#ef4444', 3);
+          spawnParticles(a.pos.x, a.pos.y, 8, '#c026d3', 3); // Fuchsia explosion
           
           if (a.type === 'large') {
             scoreRef.current += 100;
@@ -478,9 +478,9 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
     });
     ctx.globalAlpha = 1.0;
 
-    ctx.fillStyle = '#ef4444'; 
+    ctx.fillStyle = '#c026d3'; // Bullet color (Fuchsia 600)
     ctx.shadowBlur = 10;
-    ctx.shadowColor = '#ef4444';
+    ctx.shadowColor = '#c026d3';
     bulletsRef.current.forEach(b => {
       ctx.beginPath();
       ctx.arc(b.pos.x, b.pos.y, 3, 0, Math.PI * 2);
@@ -488,7 +488,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
     });
     ctx.shadowBlur = 0;
 
-    ctx.strokeStyle = '#cbd5e1'; 
+    ctx.strokeStyle = '#e9d5ff'; // Asteroid wireframe (Purple 200)
     ctx.lineWidth = 2;
     asteroidsRef.current.forEach(a => {
       ctx.save();
@@ -496,7 +496,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
       ctx.rotate(a.angle);
       
       ctx.shadowBlur = a.type === 'large' ? 5 : 10;
-      ctx.shadowColor = '#ffffff';
+      ctx.shadowColor = '#d8b4fe'; // Purple 300 shadow
 
       ctx.beginPath();
       ctx.moveTo(a.vertices[0].x, a.vertices[0].y);
@@ -506,7 +506,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
       ctx.closePath();
       ctx.stroke();
 
-      ctx.fillStyle = '#ef4444';
+      ctx.fillStyle = '#c026d3'; // Asteroid fill (Fuchsia 600)
       ctx.globalAlpha = 0.1;
       ctx.fill();
       ctx.globalAlpha = 1.0;
@@ -519,10 +519,10 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
         ctx.translate(ship.pos.x, ship.pos.y);
         ctx.rotate(ship.angle);
 
-        ctx.strokeStyle = '#0ea5e9'; 
+        ctx.strokeStyle = '#9333ea'; // Ship color (Purple 600)
         ctx.lineWidth = 2;
         ctx.shadowBlur = 15;
-        ctx.shadowColor = '#0ea5e9';
+        ctx.shadowColor = '#9333ea';
         
         ctx.beginPath();
         ctx.moveTo(20, 0); 
@@ -533,7 +533,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
         ctx.stroke();
 
         if (ship.thrusting) {
-           ctx.fillStyle = '#ef4444';
+           ctx.fillStyle = '#c026d3'; // Thrust color (Fuchsia 600)
            ctx.beginPath();
            ctx.moveTo(-12, 0);
            ctx.lineTo(-25, 5);
@@ -634,18 +634,18 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
         <div className="fixed inset-0 pointer-events-none z-50 p-8">
            {/* Top Bar */}
            <div className="absolute top-8 left-8 flex flex-col gap-1">
-              <span className="text-blue-200 text-[10px] font-black tracking-[0.4em] uppercase">SCORE</span>
+              <span className="text-purple-300 text-[10px] font-black tracking-[0.4em] uppercase">SCORE</span>
               <span className="text-white font-display font-black text-4xl tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
                 {uiScore.toString().padStart(6, '0')}
               </span>
-              <span className="text-blue-300 text-[9px] font-bold tracking-widest mt-1">BEST: {highScore}</span>
+              <span className="text-fuchsia-300 text-[9px] font-bold tracking-widest mt-1">BEST: {highScore}</span>
            </div>
 
            <div className="absolute top-8 right-8 text-right flex flex-col gap-2 items-end">
-              <span className="text-blue-200 text-[10px] font-black tracking-[0.4em] uppercase">LIVES</span>
+              <span className="text-purple-300 text-[10px] font-black tracking-[0.4em] uppercase">LIVES</span>
               <div className="flex gap-2">
                  {[...Array(3)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" className={`w-6 h-6 ${i < uiLives ? 'fill-red-600 drop-shadow-[0_0_8px_#D90429]' : 'fill-slate-800'}`}>
+                    <svg key={i} viewBox="0 0 24 24" className={`w-6 h-6 ${i < uiLives ? 'fill-fuchsia-600 drop-shadow-[0_0_8px_#c026d3]' : 'fill-slate-800'}`}>
                       <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                     </svg>
                  ))}
@@ -670,7 +670,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
       {isLocked && gameState === 'briefing' && (
         <div className="relative z-20 text-center px-6 animate-in zoom-in duration-500">
            {/* Floating Orb Icon */}
-           <div className="w-20 h-20 mx-auto bg-gradient-to-tr from-blue-400 to-purple-500 rounded-full animate-bounce opacity-80 mb-8 absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_30px_rgba(59,130,246,0.5)]"></div>
+           <div className="w-20 h-20 mx-auto bg-gradient-to-tr from-fuchsia-500 to-purple-600 rounded-full animate-bounce opacity-80 mb-8 absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_30px_rgba(192,38,211,0.5)]"></div>
 
            {/* New Name */}
            <h1 className="text-7xl md:text-9xl font-display font-black text-white uppercase tracking-tighter mb-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
@@ -678,8 +678,8 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
            </h1>
 
            <div className="bg-slate-900/90 border border-white/10 p-8 max-w-lg mx-auto backdrop-blur-md mb-12 rounded-xl">
-              <p className="text-blue-100 font-mono text-sm leading-relaxed mb-6">
-                <span className="text-red-500 font-bold">MISSION:</span> BLAST ASTEROIDS.
+              <p className="text-purple-100 font-mono text-sm leading-relaxed mb-6">
+                <span className="text-fuchsia-500 font-bold">MISSION:</span> BLAST ASTEROIDS.
               </p>
               <div className="flex gap-4 justify-center">
                  <div className="text-[10px] font-bold text-white/70 uppercase tracking-widest bg-black/50 px-3 py-1">Lives: 3</div>
@@ -691,7 +691,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                <button 
                  onClick={startGame}
-                 className="w-72 py-6 bg-red-600 text-white font-display font-black text-lg tracking-[0.2em] uppercase hover:bg-white hover:text-red-600 transition-all border-2 border-red-600 shadow-[0_0_30px_rgba(217,4,41,0.4)] hover:-translate-y-1"
+                 className="w-72 py-6 bg-fuchsia-600 text-white font-display font-black text-lg tracking-[0.2em] uppercase hover:bg-white hover:text-fuchsia-600 transition-all border-2 border-fuchsia-600 shadow-[0_0_30px_rgba(192,38,211,0.4)] hover:-translate-y-1"
                >
                  START GAME
                </button>
@@ -710,7 +710,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
         <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-[60] pointer-events-auto">
           <button 
             onClick={stopGame}
-            className="px-10 py-4 bg-transparent text-white/50 border-2 border-white/10 font-display font-black text-xs tracking-[0.4em] uppercase hover:bg-red-600 hover:border-red-600 hover:text-white transition-all backdrop-blur-md"
+            className="px-10 py-4 bg-transparent text-white/50 border-2 border-white/10 font-display font-black text-xs tracking-[0.4em] uppercase hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-white transition-all backdrop-blur-md"
           >
             EXIT GAME
           </button>
@@ -721,22 +721,22 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
       {gameState === 'gameover' && (
              <div className="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm pointer-events-auto animate-in zoom-in duration-300 z-50">
                <div className="text-center space-y-8">
-                 <h2 className="text-6xl font-display font-black text-red-600 uppercase tracking-tighter drop-shadow-[0_0_30px_#D90429]">System Failure</h2>
+                 <h2 className="text-6xl font-display font-black text-fuchsia-600 uppercase tracking-tighter drop-shadow-[0_0_30px_#c026d3]">System Failure</h2>
                  <div className="flex flex-col gap-2">
                     <p className="text-white text-xl tracking-[0.5em] font-bold">FINAL SCORE: {uiScore}</p>
-                    <p className="text-blue-300 text-xs tracking-[0.3em] font-bold">BEST: {highScore}</p>
+                    <p className="text-purple-300 text-xs tracking-[0.3em] font-bold">BEST: {highScore}</p>
                  </div>
                  
                  <div className="flex flex-col gap-4">
                     <button 
                     onClick={startGame}
-                    className="px-12 py-4 bg-white text-black font-display font-black text-xl tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all uppercase"
+                    className="px-12 py-4 bg-white text-black font-display font-black text-xl tracking-[0.2em] hover:bg-fuchsia-600 hover:text-white transition-all uppercase"
                     >
                     REBOOT SYSTEM
                     </button>
                     <button 
                     onClick={stopGame}
-                    className="text-white/60 font-bold tracking-widest text-xs hover:text-red-500"
+                    className="text-white/60 font-bold tracking-widest text-xs hover:text-fuchsia-500"
                     >
                     EXIT GAME
                     </button>
@@ -748,32 +748,27 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
       {/* STANDARD HERO CONTENT (Visible only when UNLOCKED and Game NOT Active) */}
       {!isLocked && !gameActive && (
         <div className={`relative z-10 text-center px-6 max-w-6xl mx-auto pointer-events-none transition-all duration-700 animate-in fade-in zoom-in-95`}>
-          <div className="mb-14 flex justify-center items-center gap-12">
-            <div className="w-20 h-[2px] bg-red-600"></div>
-            <span className="text-red-600 text-[12px] font-black tracking-[1em] uppercase">Hypercore Terminal</span>
-            <div className="w-20 h-[2px] bg-red-600"></div>
-          </div>
           
-          <h1 className="text-8xl md:text-9xl font-display font-black tracking-tighter mb-12 leading-none text-white text-glow-blue">
+          <h1 className="text-8xl md:text-9xl font-display font-black tracking-tighter mb-12 leading-none text-white text-glow-fuchsia">
             LORI <br />
             <span className="text-white">BATTOUK</span>
           </h1>
           
-          <p className="max-w-4xl mx-auto text-blue-100 text-2xl md:text-3xl font-light mb-24 leading-relaxed tracking-wider">
+          <p className="max-w-4xl mx-auto text-purple-100 text-2xl md:text-3xl font-light mb-24 leading-relaxed tracking-wider">
             Crafting high-precision software with a signature modern aesthetic.
           </p>
 
           <div className="flex flex-wrap justify-center gap-16 mb-20 pointer-events-auto">
             <button 
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-16 py-8 bg-red-600 text-white font-display font-black text-xl tracking-[0.5em] uppercase transition-all hover:bg-white hover:text-red-600 border-4 border-red-600"
+              className="group relative px-16 py-8 bg-fuchsia-600 text-white font-display font-black text-xl tracking-[0.5em] uppercase transition-all hover:bg-white hover:text-fuchsia-600 border-4 border-fuchsia-600"
             >
               PROJECTS
             </button>
             
             <button 
               onClick={startGame}
-              className="px-16 py-8 border-4 border-white/20 text-white font-display font-black text-xl tracking-[0.5em] uppercase transition-all hover:border-red-600 hover:text-red-600"
+              className="px-16 py-8 border-4 border-white/20 text-white font-display font-black text-xl tracking-[0.5em] uppercase transition-all hover:border-fuchsia-600 hover:text-fuchsia-600"
             >
               PLAY ASTRO BIT
             </button>

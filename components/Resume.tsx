@@ -53,24 +53,9 @@ const Resume: React.FC<ResumeProps> = ({ isOpen, onClose }) => {
         
         {/* Actions - Hidden in Print */}
         <div className="fixed top-6 right-6 z-[110] flex gap-4 no-print">
-            {/* Direct Download Link - User must provide resume.pdf */}
-            <a 
-              href="/resume.pdf" 
-              download="Lori_Battouk_Resume.pdf"
-              className="flex items-center gap-2 bg-white text-slate-900 px-6 py-3 font-display font-bold text-xs tracking-widest uppercase hover:bg-slate-200 transition-colors shadow-lg border border-white"
-            >
-              Download PDF
-            </a>
-             {/* Print Fallback */}
-            <button 
-              onClick={() => window.print()}
-              className="flex items-center gap-2 bg-slate-800 text-white px-6 py-3 font-display font-bold text-xs tracking-widest uppercase hover:bg-slate-700 transition-colors shadow-lg border border-slate-700"
-            >
-              Print View
-            </button>
             <button 
               onClick={onClose}
-              className="flex items-center gap-2 bg-red-600 text-white px-6 py-3 font-display font-bold text-xs tracking-widest uppercase hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-600"
+              className="flex items-center gap-2 bg-fuchsia-600 text-white px-6 py-3 font-display font-bold text-xs tracking-widest uppercase hover:bg-fuchsia-700 transition-colors shadow-[0_0_20px_rgba(192,38,211,0.5)] border border-fuchsia-600"
             >
               Close ✕
             </button>
@@ -86,9 +71,9 @@ const Resume: React.FC<ResumeProps> = ({ isOpen, onClose }) => {
             <div className="contact-info flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm font-bold text-slate-700">
               <span className="flex items-center gap-1">647-395-0688</span>
               <span className="hidden md:inline text-slate-300">|</span>
-              <a href="mailto:lbattouk@gmail.com" className="hover:text-red-600 transition-colors flex items-center gap-1">lbattouk@gmail.com</a>
+              <a href="mailto:lbattouk@gmail.com" className="hover:text-fuchsia-600 transition-colors flex items-center gap-1">lbattouk@gmail.com</a>
               <span className="hidden md:inline text-slate-300">|</span>
-              <a href="https://linkedin.com/in/loribattouk" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors flex items-center gap-1">www.linkedin.com/in/LoriBattouk</a>
+              <a href="https://linkedin.com/in/loribattouk" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-colors flex items-center gap-1">www.linkedin.com/in/LoriBattouk</a>
               <span className="hidden md:inline text-slate-300">|</span>
               <a href="https://github.com/LoriB14" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors flex items-center gap-1">https://github.com/LoriB14</a>
             </div>

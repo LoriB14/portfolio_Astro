@@ -35,9 +35,9 @@ const GeminiAssistant: React.FC = () => {
       {isOpen ? (
         <div className="w-80 md:w-96 bg-slate-950 border border-white/10 rounded-none flex flex-col shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
           {/* Header */}
-          <div className="bg-slate-900 p-5 border-b border-red-600/30 flex justify-between items-center">
+          <div className="bg-slate-900 p-5 border-b border-fuchsia-600/30 flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-red-600 animate-ping"></div>
+              <div className="w-2 h-2 bg-fuchsia-600 animate-ping"></div>
               <span className="font-display font-bold text-[10px] tracking-[0.3em] text-white uppercase">Lori's AI Assistant</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-slate-500 hover:text-white transition-colors">
@@ -52,7 +52,7 @@ const GeminiAssistant: React.FC = () => {
                 <div className={`max-w-[85%] p-4 text-[11px] font-medium leading-relaxed ${
                   msg.role === 'user' 
                     ? 'bg-white text-slate-950 font-bold' 
-                    : 'bg-slate-900 text-slate-300 border-l-2 border-red-600'
+                    : 'bg-slate-900 text-slate-300 border-l-2 border-fuchsia-600'
                 }`}>
                   {msg.text}
                 </div>
@@ -60,10 +60,10 @@ const GeminiAssistant: React.FC = () => {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-slate-900 p-4 border-l-2 border-sky-400 text-sky-400 flex gap-1">
-                  <div className="w-1.5 h-1.5 bg-sky-400 animate-bounce"></div>
-                  <div className="w-1.5 h-1.5 bg-sky-400 animate-bounce [animation-delay:0.2s]"></div>
-                  <div className="w-1.5 h-1.5 bg-sky-400 animate-bounce [animation-delay:0.4s]"></div>
+                <div className="bg-slate-900 p-4 border-l-2 border-purple-400 text-purple-400 flex gap-1">
+                  <div className="w-1.5 h-1.5 bg-purple-400 animate-bounce"></div>
+                  <div className="w-1.5 h-1.5 bg-purple-400 animate-bounce [animation-delay:0.2s]"></div>
+                  <div className="w-1.5 h-1.5 bg-purple-400 animate-bounce [animation-delay:0.4s]"></div>
                 </div>
               </div>
             )}
@@ -76,11 +76,11 @@ const GeminiAssistant: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="ASK ABOUT ME..."
-              className="flex-grow bg-slate-950 border border-white/10 focus:border-red-600 outline-none p-3 text-[10px] font-display tracking-widest text-white"
+              className="flex-grow bg-slate-950 border border-white/10 focus:border-fuchsia-600 outline-none p-3 text-[10px] font-display tracking-widest text-white"
             />
             <button 
               onClick={handleSend}
-              className="bg-white text-slate-950 px-4 py-2 font-black text-[10px] tracking-widest hover:bg-red-600 hover:text-white transition-all"
+              className="bg-white text-slate-950 px-4 py-2 font-black text-[10px] tracking-widest hover:bg-fuchsia-600 hover:text-white transition-all"
             >
               SEND
             </button>
@@ -89,11 +89,11 @@ const GeminiAssistant: React.FC = () => {
       ) : (
         <button 
           onClick={() => setIsOpen(true)}
-          className="group relative w-20 h-20 bg-slate-950 border-2 border-red-600 flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 overflow-hidden"
+          className="group relative w-20 h-20 bg-slate-950 border-2 border-fuchsia-600 flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+          <div className="absolute inset-0 bg-fuchsia-600 opacity-0 group-hover:opacity-10 transition-opacity"></div>
           <div className="relative z-10 text-2xl font-display font-black text-white">AI</div>
-          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-sky-400"></div>
+          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-purple-400"></div>
         </button>
       )}
     </div>

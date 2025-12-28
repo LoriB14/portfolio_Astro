@@ -32,7 +32,7 @@ const Skills: React.FC = () => {
       <div className="flex items-end justify-between mb-16 border-b border-white/10 pb-6">
         <div>
            <h2 className="text-4xl font-display font-black text-white mb-2 tracking-tighter uppercase">Technical Skills</h2>
-           <p className="text-blue-200 text-xs font-bold tracking-[0.2em] uppercase">Systems · Architecture · Design</p>
+           <p className="text-purple-200 text-xs font-bold tracking-[0.2em] uppercase">Systems · Architecture · Design</p>
         </div>
         <div className="hidden md:block text-right">
             <div className="text-[10px] text-white/40 font-mono">EST. 2024</div>
@@ -47,19 +47,19 @@ const Skills: React.FC = () => {
             className="group relative bg-[#020617] p-10 hover:bg-[#050b24] transition-colors duration-500"
           >
             {/* Hover Accent Line */}
-            <div className="absolute top-0 left-0 w-[2px] h-0 bg-red-600 group-hover:h-full transition-all duration-300"></div>
+            <div className="absolute top-0 left-0 w-[2px] h-0 bg-fuchsia-600 group-hover:h-full transition-all duration-300"></div>
 
             {/* Visual Anchor & Title */}
             <div className="flex items-start justify-between mb-8">
                <div className="flex flex-col">
-                  <h3 className="text-xl font-display font-bold text-white mb-1 tracking-tight group-hover:text-red-500 transition-colors">
+                  <h3 className="text-xl font-display font-bold text-white mb-1 tracking-tight group-hover:text-fuchsia-500 transition-colors">
                     {group.category}
                   </h3>
                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
                     {group.description}
                   </p>
                </div>
-               <div className="text-red-600 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+               <div className="text-fuchsia-600 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
                   {Icons[group.icon]}
                </div>
             </div>
@@ -71,14 +71,14 @@ const Skills: React.FC = () => {
                   key={skill.name} 
                   className="flex items-center group/item cursor-default"
                 >
-                  <span className="w-1.5 h-1.5 bg-white/10 rounded-full mr-4 group-hover/item:bg-red-600 transition-colors"></span>
+                  <span className="w-1.5 h-1.5 bg-white/10 rounded-full mr-4 group-hover/item:bg-fuchsia-600 transition-colors"></span>
                   <span className="text-base text-slate-300 font-medium group-hover/item:text-white transition-colors">
                     {skill.name}
                   </span>
                   
                   {/* Micro-descriptor tooltip style */}
                   {skill.desc && (
-                    <span className="ml-3 text-[10px] font-mono text-blue-400 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 uppercase tracking-wider">
+                    <span className="ml-3 text-[10px] font-mono text-purple-400 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 uppercase tracking-wider">
                       // {skill.desc}
                     </span>
                   )}

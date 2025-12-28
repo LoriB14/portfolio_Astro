@@ -13,7 +13,8 @@ import Resume from './components/Resume';
 
 const App: React.FC = () => {
   const [isBooted, setIsBooted] = useState(false);
-  const [accessGranted, setAccessGranted] = useState(false);
+  // Default to true so we bypass the "Locked" game briefing state
+  const [accessGranted, setAccessGranted] = useState(true);
   const [gameActive, setGameActive] = useState(false); // Track if game is running to hide UI
   const [activeSection, setActiveSection] = useState('home');
   const [isProjectOpen, setIsProjectOpen] = useState(false);
@@ -54,7 +55,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white cyber-grid animate-in fade-in duration-1000">
-      <div className="fixed inset-0 bg-gradient-to-b from-transparent via-sky-500/5 to-transparent pointer-events-none"></div>
+      <div className="fixed inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent pointer-events-none"></div>
       
       {/* Resume Overlay */}
       <Resume isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
@@ -106,18 +107,18 @@ const App: React.FC = () => {
           <footer className="py-12 px-6 border-t border-white/10 bg-slate-950/80 backdrop-blur-md relative z-10 animate-in fade-in duration-1000">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 border border-red-600 flex items-center justify-center">
-                  <span className="font-bold text-red-600">LB</span>
+                <div className="w-8 h-8 border border-fuchsia-600 flex items-center justify-center">
+                  <span className="font-bold text-fuchsia-600">LB</span>
                 </div>
-                <span className="font-display font-bold tracking-tighter text-xl text-white">LORI <span className="text-red-500">BATTOUK</span></span>
+                <span className="font-display font-bold tracking-tighter text-xl text-white">LORI <span className="text-fuchsia-500">BATTOUK</span></span>
               </div>
-              <p className="text-blue-200 text-[10px] font-bold tracking-widest uppercase">Senior Software Engineer | Built with React & Tailwind</p>
+              <p className="text-purple-200 text-[10px] font-bold tracking-widest uppercase">Software Engineer | Built with React & Tailwind</p>
               <div className="flex gap-8 items-center">
-                <a href="https://github.com/LoriB14" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-red-500 transition-colors uppercase text-[10px] font-black tracking-widest hover:shadow-[0_0_10px_rgba(239,68,68,0.5)]">GITHUB</a>
-                <a href="https://www.linkedin.com/in/loribattouk/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-red-500 transition-colors uppercase text-[10px] font-black tracking-widest hover:shadow-[0_0_10px_rgba(239,68,68,0.5)]">LINKEDIN</a>
+                <a href="https://github.com/LoriB14" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-fuchsia-500 transition-colors uppercase text-[10px] font-black tracking-widest hover:shadow-[0_0_10px_rgba(192,38,211,0.5)]">GITHUB</a>
+                <a href="https://www.linkedin.com/in/loribattouk/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-fuchsia-500 transition-colors uppercase text-[10px] font-black tracking-widest hover:shadow-[0_0_10px_rgba(192,38,211,0.5)]">LINKEDIN</a>
                 <button 
                   onClick={() => setIsResumeOpen(true)}
-                  className="text-white/60 hover:text-red-500 transition-colors uppercase text-[10px] font-black tracking-widest hover:shadow-[0_0_10px_rgba(239,68,68,0.5)]"
+                  className="text-white/60 hover:text-fuchsia-500 transition-colors uppercase text-[10px] font-black tracking-widest hover:shadow-[0_0_10px_rgba(192,38,211,0.5)]"
                 >
                   RESUME
                 </button>

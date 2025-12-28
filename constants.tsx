@@ -6,7 +6,7 @@ export const PROJECTS: Project[] = [
     id: 1,
     title: "6IXASSIST",
     category: "AI / GEOLOCATION",
-    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     tags: ["React", "Gemini API", "OpenStreetMap", "TypeScript"],
     description: "AI-powered resource finder helping Toronto residents locate food banks and shelters.",
     detailedDescription: "Winner of 1st Place at ElleHacks Hackathon. 6ixAssist leverages natural language processing to interpret user needs and maps them to real-time community resource data. It bridges the gap between complex social service databases and the people who need them most.",
@@ -24,29 +24,31 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    title: "ONYX RETAIL",
-    category: "COMMERCE / PRIVATE",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
-    tags: ["Shopify Plus", "Next.js", "Redis", "Headless"],
-    description: "High-performance headless e-commerce architecture for a private luxury fashion client.",
-    detailedDescription: "A complete digital transformation for a high-end fashion label. We migrated from a monolithic legacy system to a composable headless architecture. This allowed for sub-second page loads, a 40% increase in mobile conversion rates, and a fully bespoke frontend experience unconstrained by templates.",
+    title: "PEGASUS",
+    category: "E-COMMERCE",
+    // Using a placeholder to represent the "Pegasus International" logo (Black text on White) as requested
+    image: "https://placehold.co/800x450/FFFFFF/000000/png?text=PEGASUS+INTERNATIONAL&font=montserrat",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    description: "A futuristic, high-velocity e-commerce interface designed for the next generation of digital retail.",
+    detailedDescription: "Pegasus is a cutting-edge e-commerce platform engineered for speed and seamless user interaction. It features a fully responsive product catalog, dynamic cart management, and a streamlined checkout flow. Designed with a modern, minimalist aesthetic, it delivers a premium shopping experience across all devices.",
     features: [
-      "Headless Architecture",
-      "Global Inventory Sync",
-      "Bespoke 3D Product Viewers",
-      "Instant Checkout Flow"
+      "Modern Responsive UI",
+      "Real-time Cart Management",
+      "Dynamic Product Filtering",
+      "Optimized Performance"
     ],
-    role: "Senior Engineer",
-    status: "Private / NDA",
-    technicalDetails: "Utilizes Next.js 14 for the frontend layer, connected to Shopify Plus via the Storefront API. Heavy emphasis on Edge caching using Vercel and Redis for handling flash-sale traffic spikes. Due to strict NDA agreements, source code and client details are classified.",
-    demoUrl: "", // Empty string signals Private
-    repoUrl: ""  // Empty string signals Private
+    role: "Full Stack Developer",
+    status: "Live Deployment",
+    technicalDetails: "Deployed on Vercel for maximum performance and scalability. The application leverages Next.js for server-side rendering and efficient data fetching, while Tailwind CSS ensures a consistent and adaptive design system. The architecture is built to handle high traffic with minimal latency.",
+    demoUrl: "https://pegasus-zeta.vercel.app/",
+    repoUrl: "#" 
   },
   {
     id: 3,
     title: "GO STATION TRACKER",
     category: "DATA VISUALIZATION",
-    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=800",
+    // Updated to a train station / commuter parking visual
+    image: "https://images.unsplash.com/photo-1474487548417-781cb714c2f0?auto=format&fit=crop&q=80&w=800",
     tags: ["Python", "Flask", "SQLite", "JavaScript"],
     description: "Real-time parking availability dashboard for commuters.",
     detailedDescription: "A high-performance dashboard designed to streamline the daily commute. It aggregates data from various GO Transit infrastructure endpoints to provide a real-time visualization of parking availability across the network, helping commuters plan their arrival times better.",
@@ -64,23 +66,23 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 4,
-    title: "PROJECT: SYNTH",
-    category: "COMING SOON",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
-    tags: ["WebGPU", "Neural Interface", "R&D"],
-    description: "Experimental next-gen rendering engine. Currently in early prototyping phase.",
-    detailedDescription: "This project explores the capabilities of WebGPU for real-time raytracing in the browser, combined with generative UI patterns. It represents the next step in my research into immersive web experiences.",
+    title: "PACKPAL",
+    category: "AI / TRAVEL",
+    image: "https://images.unsplash.com/photo-1530521954077-a60f12a608d9?auto=format&fit=crop&q=80&w=800",
+    tags: ["Next.js", "TypeScript", "Gemini 2.5", "PostgreSQL"],
+    description: "AI-powered travel packing assistant creating smart lists based on trip details.",
+    detailedDescription: "PackPal is an intelligent travel companion that generates personalized packing checklists using Gemini 2.5. By analyzing weather forecasts, trip duration, and destination activities, it ensures travelers never leave essentials behind. Features include secure authentication and collaborative list editing.",
     features: [
-      "Real-time Raytracing",
-      "Generative UI",
-      "Experimental",
-      "Stealth Mode"
+      "Smart Packing Lists (Gemini 2.5)",
+      "Weather Integration",
+      "Collaborative Planning",
+      "Real-time Sync"
     ],
-    role: "R&D",
-    status: "In Development",
-    technicalDetails: "Details classified until public release.",
-    demoUrl: "",
-    repoUrl: ""
+    role: "Full Stack Developer",
+    status: "Live Deployment",
+    technicalDetails: "Built with Next.js and TypeScript. Uses NextAuth for secure authentication and Drizzle ORM with PostgreSQL for robust data management. Real-time updates utilize Next.js Server Actions. Deployed on Vercel.",
+    demoUrl: "#",
+    repoUrl: "#"
   }
 ];
 

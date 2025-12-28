@@ -32,9 +32,12 @@ const Intro: React.FC<IntroProps> = ({ onComplete }) => {
       
       {/* --- CREATIVE BACKGROUND --- */}
       <div className="absolute inset-0 z-0">
+        {/* Center Reddish-Purple Glow */}
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-fuchsia-700/30 rounded-full blur-[130px] animate-[pulse_6s_infinite] transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}></div>
+
         {/* Animated Orbs */}
         <div className={`absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-600/20 rounded-full blur-[100px] animate-[pulse_8s_infinite] transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}></div>
-        <div className={`absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] animate-[pulse_10s_infinite] delay-1000 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}></div>
+        <div className={`absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-pink-600/10 rounded-full blur-[120px] animate-[pulse_10s_infinite] delay-1000 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}></div>
         
         {/* Cyber Grid Overlay */}
         <div className="absolute inset-0 cyber-grid opacity-20 bg-[size:40px_40px]"></div>
@@ -46,23 +49,26 @@ const Intro: React.FC<IntroProps> = ({ onComplete }) => {
       {/* --- CONTENT LAYER --- */}
       <div className="relative z-20 flex flex-col items-center gap-12">
         
-        {/* Main Identity Block */}
+        {/* Main Identity Block with Floating Animation */}
         <div className={`text-center space-y-6 transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'}`}>
-          <div className="relative inline-block">
-            <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter text-white uppercase relative z-10 mix-blend-overlay">
-              LORI BATTOUK
-            </h1>
-            <h1 className="absolute inset-0 text-7xl md:text-9xl font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-400 to-white animate-text-shimmer bg-[length:200%_auto] z-20">
-              LORI BATTOUK
-            </h1>
-          </div>
-          
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-[1px] w-12 bg-red-600"></div>
-            <p className="text-blue-100 font-display text-sm md:text-lg tracking-[0.5em] uppercase font-bold text-glow-blue">
-              Computer Science @ York
-            </p>
-            <div className="h-[1px] w-12 bg-red-600"></div>
+          <div className="animate-float">
+            <div className="relative inline-block">
+              <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter text-white uppercase relative z-10 mix-blend-overlay">
+                LORI BATTOUK
+              </h1>
+              {/* Updated Gradient to include Reddish-Purple (Fuchsia) */}
+              <h1 className="absolute inset-0 text-7xl md:text-9xl font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-fuchsia-500 to-white animate-text-shimmer bg-[length:200%_auto] z-20">
+                LORI BATTOUK
+              </h1>
+            </div>
+            
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <div className="h-[1px] w-12 bg-fuchsia-500"></div>
+              <p className="text-fuchsia-200 font-display text-sm md:text-lg tracking-[0.5em] uppercase font-bold text-glow-blue shadow-fuchsia-500/50">
+                Computer Science @ York
+              </p>
+              <div className="h-[1px] w-12 bg-fuchsia-500"></div>
+            </div>
           </div>
         </div>
 
@@ -72,21 +78,21 @@ const Intro: React.FC<IntroProps> = ({ onComplete }) => {
             onClick={handleEnter}
             className="group relative px-16 py-5 overflow-hidden"
           >
-            {/* Hover Background Sweep */}
-            <div className="absolute inset-0 bg-red-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            {/* Hover Background Sweep - Matches Theme */}
+            <div className="absolute inset-0 bg-fuchsia-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
             
             {/* Border Lines */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/20 group-hover:bg-white transition-colors"></div>
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20 group-hover:bg-white transition-colors"></div>
             
             {/* Text */}
-            <span className="relative z-10 font-display font-black text-lg text-white tracking-[0.4em] group-hover:text-black transition-colors duration-300">
+            <span className="relative z-10 font-display font-black text-lg text-white tracking-[0.4em] group-hover:text-white transition-colors duration-300">
               ENTER PORTFOLIO
             </span>
 
             {/* Tech Brackets */}
-            <div className="absolute top-0 left-0 w-[2px] h-full bg-red-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
-            <div className="absolute top-0 right-0 w-[2px] h-full bg-red-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></div>
+            <div className="absolute top-0 left-0 w-[2px] h-full bg-fuchsia-500 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
+            <div className="absolute top-0 right-0 w-[2px] h-full bg-fuchsia-500 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></div>
           </button>
         </div>
 
@@ -111,6 +117,13 @@ const Intro: React.FC<IntroProps> = ({ onComplete }) => {
         }
         .animate-text-shimmer {
           animation: text-shimmer 8s linear infinite;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
         }
       `}</style>
     </div>

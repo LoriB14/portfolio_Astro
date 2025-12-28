@@ -14,39 +14,39 @@ const Contact: React.FC = () => {
     <div className="relative">
       <div className="flex items-center gap-6 mb-16">
         <h2 className="text-5xl font-display font-black tracking-tighter uppercase text-white">Contact Me</h2>
-        <div className="flex-grow h-[1px] bg-gradient-to-r from-red-600/50 to-transparent"></div>
+        <div className="flex-grow h-[1px] bg-gradient-to-r from-fuchsia-600/50 to-transparent"></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
         <div className="space-y-12">
           <div>
             <h3 className="text-3xl font-display font-black text-white mb-6 uppercase tracking-tight">Get In Touch</h3>
-            <p className="text-blue-100 leading-relaxed max-w-lg text-lg">
+            <p className="text-purple-100 leading-relaxed max-w-lg text-lg">
               Have a question, an opportunity, or just want to say hello? My inbox is always open. Feel free to reach out anytime.
             </p>
           </div>
           
           <div className="space-y-6">
             <a href="mailto:lbattouk@gmail.com" className="group flex items-center gap-6 cursor-pointer p-4 hover:bg-white/5 transition-colors border border-white/10">
-              <div className="w-14 h-14 bg-slate-900 flex items-center justify-center group-hover:border-red-600 transition-all border border-white/20 text-2xl text-white">✉️</div>
+              <div className="w-14 h-14 bg-slate-900 flex items-center justify-center group-hover:border-fuchsia-600 transition-all border border-white/20 text-2xl text-white">✉️</div>
               <div>
                 <p className="text-[9px] font-bold text-white/60 uppercase tracking-[0.3em] mb-1">Direct Email</p>
-                <p className="font-display font-bold text-white group-hover:text-red-500 transition-colors">lbattouk@gmail.com</p>
+                <p className="font-display font-bold text-white group-hover:text-fuchsia-500 transition-colors">lbattouk@gmail.com</p>
               </div>
             </a>
             <a href="https://www.linkedin.com/in/loribattouk/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-6 cursor-pointer p-4 hover:bg-white/5 transition-colors border border-white/10">
-              <div className="w-14 h-14 bg-slate-900 flex items-center justify-center group-hover:border-sky-500 transition-all border border-white/20 text-2xl text-white">🔗</div>
+              <div className="w-14 h-14 bg-slate-900 flex items-center justify-center group-hover:border-purple-500 transition-all border border-white/20 text-2xl text-white">🔗</div>
               <div>
                 <p className="text-[9px] font-bold text-white/60 uppercase tracking-[0.3em] mb-1">LinkedIn</p>
-                <p className="font-display font-bold text-white group-hover:text-sky-400 transition-colors">linkedin.com/in/loribattouk</p>
+                <p className="font-display font-bold text-white group-hover:text-purple-400 transition-colors">linkedin.com/in/loribattouk</p>
               </div>
             </a>
           </div>
         </div>
 
         <div className="bg-slate-900/50 p-10 border border-white/10 relative backdrop-blur-sm">
-          <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-red-600"></div>
-          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-sky-400"></div>
+          <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-fuchsia-600"></div>
+          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-purple-400"></div>
           
           {status === 'sent' ? (
             <div className="py-24 text-center">
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
               <p className="text-white/80 text-sm">I'll get back to you soon.</p>
               <button 
                 onClick={() => setStatus('idle')}
-                className="mt-12 text-[10px] font-black text-red-500 hover:text-white tracking-[0.4em] uppercase underline underline-offset-8 transition-all"
+                className="mt-12 text-[10px] font-black text-fuchsia-500 hover:text-white tracking-[0.4em] uppercase underline underline-offset-8 transition-all"
               >
                 Send Another Message
               </button>
@@ -64,18 +64,18 @@ const Contact: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="space-y-2">
                 <label className="text-[9px] font-bold text-white/60 uppercase tracking-[0.4em]">Full Name</label>
-                <input required type="text" placeholder="NAME" className="w-full bg-slate-950 border border-white/10 focus:border-red-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
+                <input required type="text" placeholder="NAME" className="w-full bg-slate-950 border border-white/10 focus:border-fuchsia-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
               </div>
               <div className="space-y-2">
                 <label className="text-[9px] font-bold text-white/60 uppercase tracking-[0.4em]">Email</label>
-                <input required type="email" placeholder="EMAIL" className="w-full bg-slate-950 border border-white/10 focus:border-sky-500 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
+                <input required type="email" placeholder="EMAIL" className="w-full bg-slate-950 border border-white/10 focus:border-purple-500 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
               </div>
               <div className="space-y-2">
                 <label className="text-[9px] font-bold text-white/60 uppercase tracking-[0.4em]">Message</label>
-                <textarea required rows={4} placeholder="MESSAGE..." className="w-full bg-slate-950 border border-white/10 focus:border-red-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all resize-none placeholder-white/30"></textarea>
+                <textarea required rows={4} placeholder="MESSAGE..." className="w-full bg-slate-950 border border-white/10 focus:border-fuchsia-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all resize-none placeholder-white/30"></textarea>
               </div>
               
-              <button type="submit" disabled={status === 'sending'} className="w-full bg-white text-slate-950 font-display font-black py-5 uppercase tracking-[0.4em] hover:bg-red-600 hover:text-white transition-all text-sm">
+              <button type="submit" disabled={status === 'sending'} className="w-full bg-white text-slate-950 font-display font-black py-5 uppercase tracking-[0.4em] hover:bg-fuchsia-600 hover:text-white transition-all text-sm">
                 {status === 'sending' ? 'TRANSMITTING...' : 'SEND MESSAGE'}
               </button>
             </form>
