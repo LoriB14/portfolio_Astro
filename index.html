@@ -13,6 +13,13 @@
             --neon-purple: #9333ea;   /* Purple 600 */
             --navy-deep: #020617;
         }
+        
+        * {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--navy-deep);
@@ -90,6 +97,23 @@
             z-index: 90;
             background-size: 100% 2px, 3px 100%;
             pointer-events: none;
+        }
+    
+        /* Hide custom cursor on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            #custom-cursor, #custom-cursor-dot {
+                display: none !important;
+            }
+            
+        * {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+
+        body {
+                cursor: auto !important;
+            }
         }
     </style>
 <script type="importmap">

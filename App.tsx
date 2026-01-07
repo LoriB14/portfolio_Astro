@@ -54,7 +54,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-slate-950 text-white cyber-grid animate-in fade-in duration-1000">
+    <div className="min-h-screen overflow-x-hidden px-4 sm:px-6 md:px-8 bg-slate-950 text-white cyber-grid animate-in fade-in duration-1000">
       <div className="fixed inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent pointer-events-none"></div>
       
       {/* Resume Overlay */}

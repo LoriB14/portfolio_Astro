@@ -635,7 +635,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
            {/* Top Bar */}
            <div className="absolute top-8 left-8 flex flex-col gap-1">
               <span className="text-purple-300 text-[10px] font-black tracking-[0.4em] uppercase">SCORE</span>
-              <span className="text-white font-display font-black text-4xl tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+              <span className="text-white font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
                 {uiScore.toString().padStart(6, '0')}
               </span>
               <span className="text-fuchsia-300 text-[9px] font-bold tracking-widest mt-1">BEST: {highScore}</span>
@@ -673,7 +673,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
            <div className="w-20 h-20 mx-auto bg-gradient-to-tr from-fuchsia-500 to-purple-600 rounded-full animate-bounce opacity-80 mb-8 absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_30px_rgba(192,38,211,0.5)]"></div>
 
            {/* New Name */}
-           <h1 className="text-7xl md:text-9xl font-display font-black text-white uppercase tracking-tighter mb-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+           <h1 className="text-3xl sm:text-5xl md:text-3xl sm:text-4xl md:text-5xl md:text-4xl sm:text-3xl sm:text-4xl md:text-5xl md:text-4xl sm:text-5xl md:text-3xl sm:text-5xl md:text-3xl sm:text-4xl md:text-5xl font-display font-black text-white uppercase tracking-tighter mb-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
              ASTRO <br/> BIT
            </h1>
 
@@ -721,7 +721,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
       {gameState === 'gameover' && (
              <div className="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm pointer-events-auto animate-in zoom-in duration-300 z-50">
                <div className="text-center space-y-8">
-                 <h2 className="text-6xl font-display font-black text-fuchsia-600 uppercase tracking-tighter drop-shadow-[0_0_30px_#c026d3]">System Failure</h2>
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-fuchsia-600 uppercase tracking-tighter drop-shadow-[0_0_30px_#c026d3]">System Failure</h2>
                  <div className="flex flex-col gap-2">
                     <p className="text-white text-xl tracking-[0.5em] font-bold">FINAL SCORE: {uiScore}</p>
                     <p className="text-purple-300 text-xs tracking-[0.3em] font-bold">BEST: {highScore}</p>
@@ -749,7 +749,7 @@ const Hero: React.FC<HeroProps> = ({ isLocked = false, onUnlock, onGameStatusCha
       {!isLocked && !gameActive && (
         <div className={`relative z-10 text-center px-6 max-w-6xl mx-auto pointer-events-none transition-all duration-700 animate-in fade-in zoom-in-95`}>
           
-          <h1 className="text-8xl md:text-9xl font-display font-black tracking-tighter mb-12 leading-none text-white text-glow-fuchsia">
+          <h1 className="text-4xl sm:text-5xl md:text-3xl sm:text-5xl md:text-3xl sm:text-4xl md:text-5xl md:text-4xl sm:text-3xl sm:text-4xl md:text-5xl md:text-4xl sm:text-5xl md:text-3xl sm:text-5xl md:text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tighter mb-12 leading-none text-white text-glow-fuchsia">
             LORI <br />
             <span className="text-white">BATTOUK</span>
           </h1>

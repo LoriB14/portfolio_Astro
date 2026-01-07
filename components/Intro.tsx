@@ -53,18 +53,18 @@ const Intro: React.FC<IntroProps> = ({ onComplete }) => {
         <div className={`text-center space-y-6 transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'}`}>
           <div className="animate-float">
             <div className="relative inline-block">
-              <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter text-white uppercase relative z-10 mix-blend-overlay">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter text-white uppercase relative z-10 mix-blend-overlay">
                 LORI BATTOUK
               </h1>
               {/* Updated Gradient to include Reddish-Purple (Fuchsia) */}
-              <h1 className="absolute inset-0 text-7xl md:text-9xl font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-fuchsia-500 to-white animate-text-shimmer bg-[length:200%_auto] z-20">
+              <h1 className="absolute inset-0 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-fuchsia-500 to-white animate-text-shimmer bg-[length:200%_auto] z-20">
                 LORI BATTOUK
               </h1>
             </div>
             
             <div className="flex items-center justify-center gap-4 mt-6">
               <div className="h-[1px] w-12 bg-fuchsia-500"></div>
-              <p className="text-fuchsia-200 font-display text-sm md:text-lg tracking-[0.5em] uppercase font-bold text-glow-blue shadow-fuchsia-500/50">
+              <p className="text-fuchsia-200 font-display text-xs sm:text-sm md:text-base tracking-[0.5em] uppercase font-bold text-glow-blue shadow-fuchsia-500/50">
                 Computer Science @ York
               </p>
               <div className="h-[1px] w-12 bg-fuchsia-500"></div>

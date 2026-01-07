@@ -7,7 +7,7 @@ const Education: React.FC = () => {
        {/* Section Header */}
        <div className="flex items-end justify-between mb-20 border-b border-white/20 pb-8">
         <div>
-           <h2 className="text-5xl md:text-7xl font-display font-black text-white mb-4 tracking-tighter uppercase">Education</h2>
+           <h2 className="text-5xl md:text-3xl sm:text-5xl md:text-6xl font-display font-black text-white mb-4 tracking-tighter uppercase">Education</h2>
            <p className="text-purple-300 text-sm md:text-lg font-bold tracking-[0.2em] uppercase">Academic & Professional</p>
         </div>
         <div className="hidden md:block text-right">

@@ -60,13 +60,13 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
   };
 
   return (
-    <div className="relative w-full py-10">
+    <div className="relative w-full py-10 px-4 sm:px-6">
       
       {/* --- LIST VIEW --- */}
       <div className={`transition-all duration-500 ${selectedProject ? 'opacity-0 pointer-events-none scale-95' : 'opacity-100 scale-100'}`}>
         {/* HEADER */}
         <div className="mb-16 border-l-4 border-fuchsia-600 pl-6">
-            <h2 className="text-4xl font-display font-bold text-white mb-2 tracking-tight">Projects</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-2 tracking-tight">Projects</h2>
             <p className="text-white/50 text-sm font-bold tracking-widest uppercase">Mission Archive</p>
         </div>
 
