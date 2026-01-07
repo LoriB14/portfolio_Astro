@@ -105,9 +105,7 @@ const Intro: React.FC<IntroProps> = ({ onComplete }) => {
             <div className="w-1 h-1 bg-white rounded-full animate-pulse delay-75"></div>
             <div className="w-1 h-1 bg-white rounded-full animate-pulse delay-150"></div>
          </div>
-         <div className="text-[10px] font-mono text-white/40 tracking-widest uppercase">
-            v2.5 // ONLINE
-         </div>
+         {/* Version text removed */}
       </div>
 
       <style>{`

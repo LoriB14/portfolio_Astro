@@ -197,14 +197,16 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
               </div>
 
               {/* PREVIEW IMAGE */}
-              <div className="w-full aspect-video md:aspect-[21/9] bg-slate-900 rounded-xl overflow-hidden border border-white/10 mb-16 relative group hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-500 animate-in zoom-in-95 duration-700 delay-100">
-                  <img 
-                    src={selectedProject.image} 
-                    alt={selectedProject.title} 
-                    className={`w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 ${!selectedProject.demoUrl ? 'grayscale opacity-60' : ''}`}
-                  />
+              <div className="w-full flex justify-center bg-slate-900 rounded-xl overflow-hidden border border-white/10 mb-16 relative group hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-500 animate-in zoom-in-95 duration-700 delay-100">
+                  <div className="relative w-full max-h-[70vh] flex items-center justify-center py-4">
+                      <img 
+                        src={selectedProject.image} 
+                        alt={selectedProject.title} 
+                        className={`max-w-full max-h-[70vh] object-contain transition-transform duration-1000 group-hover:scale-[1.02] ${!selectedProject.demoUrl ? 'grayscale opacity-60' : ''}`}
+                      />
+                  </div>
                   {/* Subtle vignette frame */}
-                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl"></div>
+                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none"></div>
               </div>
 
               {/* DETAILS GRID */}
@@ -276,7 +278,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                       {/* ACTIONS */}
                       <div className="flex flex-col gap-5 pt-4">
                           {selectedProject.demoUrl ? (
-                            <a href={selectedProject.demoUrl} className="w-full py-5 bg-white text-black font-black text-center rounded-lg hover:bg-fuchsia-600 hover:text-white transition-all uppercase tracking-widest text-sm shadow-lg hover:shadow-[0_0_20px_rgba(192,38,211,0.6)] transform hover:-translate-y-1">
+                            <a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer" className="w-full py-5 bg-white text-black font-black text-center rounded-lg hover:bg-fuchsia-600 hover:text-white transition-all uppercase tracking-widest text-sm shadow-lg hover:shadow-[0_0_20px_rgba(192,38,211,0.6)] transform hover:-translate-y-1">
                                 Live Demo
                             </a>
                           ) : (
@@ -286,7 +288,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                           )}
                           
                           {selectedProject.repoUrl ? (
-                            <a href={selectedProject.repoUrl} className="w-full py-5 bg-transparent border-2 border-white/20 text-white font-black text-center rounded-lg hover:bg-white/10 hover:border-white transition-all uppercase tracking-widest text-sm hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transform hover:-translate-y-1">
+                            <a href={selectedProject.repoUrl} target="_blank" rel="noopener noreferrer" className="w-full py-5 bg-transparent border-2 border-white/20 text-white font-black text-center rounded-lg hover:bg-white/10 hover:border-white transition-all uppercase tracking-widest text-sm hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transform hover:-translate-y-1">
                                 Source Code
                             </a>
                           ) : (
