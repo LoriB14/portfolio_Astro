@@ -35,16 +35,16 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-6">
-      <div className="flex items-center gap-6 mb-16">
+    <div className="relative px-2 sm:px-6">
+      <div className="flex items-center gap-4 sm:gap-6 mb-8 sm:mb-16">
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tighter uppercase text-white">Contact Me</h2>
         <div className="flex-grow h-[1px] bg-gradient-to-r from-fuchsia-600/50 to-transparent"></div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-20 items-start">
-        <div className="space-y-8 sm:space-y-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-20 items-start">
+        <div className="space-y-6 sm:space-y-8 md:space-y-12">
           <div>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-black text-white mb-4 sm:mb-6 uppercase tracking-tight">Get In Touch</h3>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-black text-white mb-3 sm:mb-4 md:mb-6 uppercase tracking-tight">Get In Touch</h3>
             <p className="text-purple-100 leading-relaxed max-w-lg text-base sm:text-lg">
               Have a question, an opportunity, or just want to say hello? My inbox is always open. Feel free to reach out anytime.
             </p>

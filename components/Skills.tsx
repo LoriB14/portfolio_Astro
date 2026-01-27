@@ -27,9 +27,9 @@ const Icons: Record<string, React.ReactNode> = {
 
 const Skills: React.FC = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6">
+    <div className="w-full max-w-5xl mx-auto px-2 sm:px-6">
       {/* Header */}
-      <div className="flex items-end justify-between mb-16 border-b border-white/10 pb-6">
+      <div className="flex items-end justify-between mb-8 sm:mb-16 border-b border-white/10 pb-4 sm:pb-6">
         <div>
            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-2 tracking-tighter uppercase">Technical Skills</h2>
            <p className="text-purple-200 text-xs font-bold tracking-[0.2em] uppercase">Systems · Architecture · Design</p>

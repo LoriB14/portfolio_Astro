@@ -3,11 +3,11 @@ import React from 'react';
 
 const Education: React.FC = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+    <div className="w-full max-w-7xl mx-auto px-2 sm:px-6">
        {/* Section Header */}
-       <div className="flex items-end justify-between mb-20 border-b border-white/20 pb-8">
+       <div className="flex items-end justify-between mb-10 sm:mb-20 border-b border-white/20 pb-4 sm:pb-8">
         <div>
-           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-4 tracking-tighter uppercase">Education</h2>
+           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-2 sm:mb-4 tracking-tighter uppercase">Education</h2>
            <p className="text-purple-300 text-sm md:text-lg font-bold tracking-[0.2em] uppercase">Academic & Professional</p>
         </div>
         <div className="hidden md:block text-right">
@@ -34,13 +34,13 @@ const Education: React.FC = () => {
             </div>
 
             {/* Main Content Grid */}
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 mb-14">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-16 mb-8 sm:mb-14">
                 {/* Academic Summary */}
-                <div className="space-y-6 sm:space-y-8">
-                    <p className="text-white leading-relaxed text-base sm:text-lg md:text-xl font-medium border-l-4 border-white/30 pl-4 sm:pl-6">
+                <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                    <p className="text-white leading-relaxed text-base sm:text-lg md:text-xl font-medium border-l-4 border-white/30 pl-3 sm:pl-4 md:pl-6">
                         Second-year Computer Science student building a strong foundation in software development, algorithms, and modern web technologies.
                     </p>
-                    <p className="text-white leading-relaxed text-base sm:text-lg md:text-xl font-medium border-l-4 border-white/30 pl-4 sm:pl-6">
+                    <p className="text-white leading-relaxed text-base sm:text-lg md:text-xl font-medium border-l-4 border-white/30 pl-3 sm:pl-4 md:pl-6">
                         My studies combine theory with hands-on projects across Java, JavaScript/React, low-level systems, and problem-solving focused coursework.
                     </p>
                 </div>
