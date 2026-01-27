@@ -17,15 +17,20 @@ Keep responses concise (1-2 sentences), professional, and confident.
 
 export const getGeminiResponse = async (userPrompt: string) => {
   try {
-    // Correctly initialize Gemini AI instance with the required named parameter and process.env.API_KEY
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    
+    if (!apiKey) {
+      return "API key not configured. Please contact Lori directly.";
+    }
+    
+    // Correctly initialize Gemini AI instance with the required named parameter
+    const ai = new GoogleGenAI({ apiKey });
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: userPrompt,
       config: {
         systemInstruction: SYSTEM_PROMPT,
         temperature: 0.7,
-        // Removed maxOutputTokens to prevent potential response blocking without thinkingBudget
       },
     });
 
