@@ -74,9 +74,7 @@ const Contact: React.FC = () => {
           
           {status === 'sent' ? (
             <div className="py-24 text-center">
-              <div className="text-6xl mb-6">✅</div>
-              <h4 className="text-2xl font-display font-black text-white mb-4 uppercase">Message Received</h4>
-              <p className="text-white/80 text-sm">I'll get back to you soon.</p>
+              <h4 className="text-2xl font-display font-black text-white mb-12 uppercase">Message Received</h4>
               <button 
                 onClick={() => setStatus('idle')}
                 className="mt-12 text-[10px] font-black text-fuchsia-500 hover:text-white tracking-[0.4em] uppercase underline underline-offset-8 transition-all"
@@ -105,7 +103,7 @@ const Contact: React.FC = () => {
               </div>
               
               <button type="submit" disabled={status === 'sending'} className="w-full bg-white text-slate-950 font-display font-black py-3 sm:py-5 uppercase tracking-[0.4em] hover:bg-fuchsia-600 hover:text-white transition-all text-sm">
-                {status === 'sending' ? 'TRANSMITTING...' : 'SEND MESSAGE'}
+                {status === 'sending' ? 'MESSAGE SENT' : 'SEND MESSAGE'}
               </button>
             </form>
           )}
