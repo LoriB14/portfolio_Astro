@@ -17,9 +17,8 @@ const GeminiAssistant: React.FC = () => {
 
   // Initialize position
   useEffect(() => {
-    // Start at bottom right, but give it concrete coordinates
-    // We'll just default to non-null to prevent jumping if we can
-    setPosition({ x: window.innerWidth - 350, y: window.innerHeight - 500 });
+    // Start at bottom right with some padding for the X button to be visible
+    setPosition({ x: window.innerWidth - 400, y: window.innerHeight - 500 });
   }, []);
 
   // Scroll to bottom
