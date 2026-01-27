@@ -3,7 +3,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
       <div className="flex items-center gap-8 mb-16">
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tighter uppercase text-white">About Me</h2>
         <div className="flex-grow h-[2px] bg-gradient-to-r from-fuchsia-600 to-transparent"></div>
@@ -11,8 +11,8 @@ const About: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Text Content */}
-        <div className="space-y-8 text-lg md:text-2xl text-white leading-relaxed font-medium">
-            <p className="border-l-4 border-fuchsia-600 pl-6">
+        <div className="space-y-6 sm:space-y-8 text-base sm:text-lg md:text-2xl text-white leading-relaxed font-medium">
+            <p className="border-l-4 border-fuchsia-600 pl-4 sm:pl-6">
               I'm a computer science student and emerging developer with a strong interest in building clean, modern, and user-friendly web experiences. I'm still learning, but I'm dedicated, curious, and constantly improving my skills through hands-on projects and real problem-solving.
             </p>
             <p>

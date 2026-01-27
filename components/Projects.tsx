@@ -65,7 +65,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
       {/* --- LIST VIEW --- */}
       <div className={`transition-all duration-500 ${selectedProject ? 'opacity-0 pointer-events-none scale-95' : 'opacity-100 scale-100'}`}>
         {/* HEADER */}
-        <div className="mb-16 border-l-4 border-fuchsia-600 pl-6">
+        <div className="mb-12 sm:mb-16 border-l-4 border-fuchsia-600 pl-4 sm:pl-6">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white mb-2 tracking-tight">Projects</h2>
         </div>
 
@@ -121,6 +121,18 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectStateChange }) => {
                             <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-2 tracking-tight group-hover:text-fuchsia-500 transition-colors">
                                 {project.title}
                             </h3>
+                            
+                            {/* Achievement Badge */}
+                            {project.id === 1 && (
+                                <div className="text-[10px] font-bold text-fuchsia-400 uppercase tracking-wider mb-3 px-2 py-1 bg-fuchsia-600/10 border border-fuchsia-600/30 rounded">
+                                    🏆 Winner of ElleHacks
+                                </div>
+                            )}
+                            {project.id === 4 && (
+                                <div className="text-[10px] font-bold text-purple-400 uppercase tracking-wider mb-3 px-2 py-1 bg-purple-600/10 border border-purple-600/30 rounded">
+                                    Vibe The Code for Hack The 6ix
+                                </div>
+                            )}
                             
                             <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2 font-medium">
                                 {project.description}

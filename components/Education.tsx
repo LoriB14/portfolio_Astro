@@ -3,7 +3,7 @@ import React from 'react';
 
 const Education: React.FC = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
        {/* Section Header */}
        <div className="flex items-end justify-between mb-20 border-b border-white/20 pb-8">
         <div>
@@ -36,11 +36,11 @@ const Education: React.FC = () => {
             {/* Main Content Grid */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 mb-14">
                 {/* Academic Summary */}
-                <div className="space-y-8">
-                    <p className="text-white leading-relaxed text-lg md:text-xl font-medium border-l-4 border-white/30 pl-6">
+                <div className="space-y-6 sm:space-y-8">
+                    <p className="text-white leading-relaxed text-base sm:text-lg md:text-xl font-medium border-l-4 border-white/30 pl-4 sm:pl-6">
                         Second-year Computer Science student building a strong foundation in software development, algorithms, and modern web technologies.
                     </p>
-                    <p className="text-white leading-relaxed text-lg md:text-xl font-medium border-l-4 border-white/30 pl-6">
+                    <p className="text-white leading-relaxed text-base sm:text-lg md:text-xl font-medium border-l-4 border-white/30 pl-4 sm:pl-6">
                         My studies combine theory with hands-on projects across Java, JavaScript/React, low-level systems, and problem-solving focused coursework.
                     </p>
                 </div>
