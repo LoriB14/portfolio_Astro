@@ -4,10 +4,34 @@ import React, { useState } from 'react';
 const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('sending');
-    setTimeout(() => setStatus('sent'), 2000);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('https://formsubmit.co/lbattouk@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setStatus('sent');
+        form.reset();
+      } else {
+        alert('Failed to send message. Please try again or email me directly.');
+        setStatus('idle');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again or email me directly.');
+      setStatus('idle');
+    }
   };
 
   return (
@@ -62,17 +86,22 @@ const Contact: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Hidden fields for FormSubmit configuration */}
+              <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              
               <div className="space-y-2">
                 <label className="text-[9px] font-bold text-white/60 uppercase tracking-[0.4em]">Full Name</label>
-                <input required type="text" placeholder="NAME" className="w-full bg-slate-950 border border-white/10 focus:border-fuchsia-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
+                <input required type="text" name="name" placeholder="NAME" className="w-full bg-slate-950 border border-white/10 focus:border-fuchsia-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
               </div>
               <div className="space-y-2">
                 <label className="text-[9px] font-bold text-white/60 uppercase tracking-[0.4em]">Email</label>
-                <input required type="email" placeholder="EMAIL" className="w-full bg-slate-950 border border-white/10 focus:border-purple-500 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
+                <input required type="email" name="email" placeholder="EMAIL" className="w-full bg-slate-950 border border-white/10 focus:border-purple-500 outline-none p-4 font-display text-xs tracking-widest text-white transition-all placeholder-white/30" />
               </div>
               <div className="space-y-2">
                 <label className="text-[9px] font-bold text-white/60 uppercase tracking-[0.4em]">Message</label>
-                <textarea required rows={4} placeholder="MESSAGE..." className="w-full bg-slate-950 border border-white/10 focus:border-fuchsia-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all resize-none placeholder-white/30"></textarea>
+                <textarea required rows={4} name="message" placeholder="MESSAGE..." className="w-full bg-slate-950 border border-white/10 focus:border-fuchsia-600 outline-none p-4 font-display text-xs tracking-widest text-white transition-all resize-none placeholder-white/30"></textarea>
               </div>
               
               <button type="submit" disabled={status === 'sending'} className="w-full bg-white text-slate-950 font-display font-black py-3 sm:py-5 uppercase tracking-[0.4em] hover:bg-fuchsia-600 hover:text-white transition-all text-sm">
